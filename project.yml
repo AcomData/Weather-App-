@@ -2,7 +2,7 @@ name: NexradRadar
 options:
   bundleIdPrefix: com.example
   deploymentTarget:
-    iOS: "16.0"
+    iOS: "17.0"
 packages:
   MapLibre:
     url: https://github.com/maplibre/maplibre-gl-native-distribution
