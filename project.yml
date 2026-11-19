@@ -1,0 +1,39 @@
+name: NexradRadar
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "16.0"
+packages:
+  MapLibre:
+    url: https://github.com/maplibre/maplibre-gl-native-distribution
+    from: 6.0.0
+  SWCompression:
+    url: https://github.com/tsolomko/SWCompression
+    from: 4.8.0
+targets:
+  NexradRadar:
+    type: application
+    platform: iOS
+    sources:
+      - Sources
+    dependencies:
+      - package: MapLibre
+      - package: SWCompression
+    info:
+      path: Sources/Info.plist
+      properties:
+        CFBundleDisplayName: NEXRAD Radar
+        UILaunchScreen: {}
+        NSLocationWhenInUseUsageDescription: Shows your location on the radar map.
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        SWIFT_VERSION: "5.0"
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.nexradradar
+        TARGETED_DEVICE_FAMILY: "1,2"
+        CODE_SIGN_STYLE: Automatic
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
